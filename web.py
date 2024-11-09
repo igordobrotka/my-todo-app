@@ -7,6 +7,7 @@ def add_todo():
     todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     functions.write_todos(todos)
+    ["new_todo"] = ""
 
 
 st.title("Todo App")
@@ -15,11 +16,11 @@ st.write("A simple to do list to manage it all")
 
 
 for index, todo in enumerate(todos):
-    checkbox = st.checkbox(todo, key="td")
+    checkbox = st.checkbox(todo, key=todo)
     if checkbox:
         todos.pop(index)
         functions.write_todos(todos)
-        del st.session_state[td]
+        del st.session_state[todo]
         st.rerun()
 
 
