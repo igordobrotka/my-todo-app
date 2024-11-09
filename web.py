@@ -11,6 +11,8 @@ def add_todo():
 
 def clear_input():
     st.session_state["new_todo"] = ""
+
+
 st.title("Todo App")
 st.subheader("Manage your time efficiently")
 st.write("A simple to do list to manage it all")
