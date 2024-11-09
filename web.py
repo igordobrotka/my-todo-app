@@ -15,7 +15,7 @@ st.write("A simple to do list to manage it all")
 
 
 for index, todo in enumerate(todos):
-    checkbox = st.checkbox(todo, key=td)
+    checkbox = st.checkbox(todo, key="td")
     if checkbox:
         todos.pop(index)
         functions.write_todos(todos)
