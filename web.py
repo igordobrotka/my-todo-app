@@ -7,9 +7,6 @@ def add_todo():
     todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     functions.write_todos(todos)
-
-
-def clear_input():
     st.session_state["new_todo"] = ""
 
 
@@ -28,4 +25,4 @@ for index, todo in enumerate(todos):
 
 
 st.text_input(label="", placeholder="Enter new todo",
-              on_change=add_todo + clear_input, key='new_todo')
+              on_change=add_todo, key='new_todo')
