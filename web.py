@@ -3,6 +3,8 @@ from modules import functions
 
 todos = functions.get_todos()
 
+st.set_page_config(layout="wide")
+
 def add_todo():
     todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
@@ -12,7 +14,8 @@ def add_todo():
 
 st.title("Todo App")
 st.subheader("Manage your time efficiently")
-st.write("A simple to do list to manage it all")
+st.write("A simple to do list to <b>manage it all</b>",
+         unsafe_allow_html=True)
 
 
 for index, todo in enumerate(todos):
